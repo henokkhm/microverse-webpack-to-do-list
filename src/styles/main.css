@@ -1,4 +1,77 @@
+/* Custom Properties */
+:root {
+  /* Colors */
+  --primary: rgb(14, 102, 234);
+  --page-bg: #f6f6f6;
+  --black: #000;
+  --white: #fff;
+  --gray-200: #eaeaea;
+  --gray-400: #00000073;
+}
+
+/* General Styles */
 body {
-  background: rgb(45, 135, 245);
-  color: rgb(235, 246, 246);
+  font-family: 'Open Sans', 'Lucida Grande', tahoma, verdana, arial, sans-serif;
+  background: var(--page-bg);
+}
+
+.container {
+  min-width: 23.4375rem;
+  max-width: 60rem;
+  margin: 3rem auto;
+  background: var(--white);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 15%);
+}
+
+/* To Do List Styles */
+.to-do-list-title {
+  padding: 0.75rem;
+}
+
+.to-do-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--gray-200);
+}
+
+.to-do-item {
+  display: flex;
+  gap: 1rem;
+  min-width: min-content;
+  justify-content: space-between;
+  padding: 0.75rem;
+  border-top: 1px solid var(--gray-200);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.to-do-item__description {
+  margin-right: auto;
+}
+
+.to-do-item__delete-btn {
+  border: none;
+  outline: none;
+}
+
+.clear-completed-btn {
+  height: 4rem;
+  width: 100%;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border: 1px solid var(--gray-200);
+  transition: background-color 300ms ease-in-out;
+}
+
+.clear-completed-btn:hover {
+  background-color: var(--primary);
+  color: var(--white);
+  font-size: 1.25rem;
+}
+
+.clear-completed-btn:active {
+  transform: translateY(3px);
 }
