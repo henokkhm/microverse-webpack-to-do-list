@@ -21,11 +21,84 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, `body {
-    background: rgb(45, 135, 245);
-    color: rgb(235, 246, 246);
+___CSS_LOADER_EXPORT___.push([module.id, `/* Custom Properties */
+:root {
+  /* Colors */
+  --primary: rgb(14, 102, 234);
+  --page-bg: #f6f6f6;
+  --black: #000;
+  --white: #fff;
+  --gray-200: #eaeaea;
+  --gray-400: #00000073;
 }
-`, "",{"version":3,"sources":["webpack://./src/styles/main.css"],"names":[],"mappings":"AAAA;IACI,6BAA6B;IAC7B,yBAAyB;AAC7B","sourcesContent":["body {\n    background: rgb(45, 135, 245);\n    color: rgb(235, 246, 246);\n}\n"],"sourceRoot":""}]);
+
+/* General Styles */
+body {
+  font-family: 'Open Sans', 'Lucida Grande', tahoma, verdana, arial, sans-serif;
+  background: var(--page-bg);
+}
+
+.container {
+  min-width: 23.4375rem;
+  max-width: 60rem;
+  margin: 3rem auto;
+  background: var(--white);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 15%);
+}
+
+/* To Do List Styles */
+.to-do-list-title {
+  padding: 0.75rem;
+}
+
+.to-do-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--gray-200);
+}
+
+.to-do-item {
+  display: flex;
+  gap: 1rem;
+  min-width: min-content;
+  justify-content: space-between;
+  padding: 0.75rem;
+  border-top: 1px solid var(--gray-200);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.to-do-item__description {
+  margin-right: auto;
+}
+
+.to-do-item__delete-btn {
+  border: none;
+  outline: none;
+}
+
+.clear-completed-btn {
+  height: 4rem;
+  width: 100%;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border: 1px solid var(--gray-200);
+  transition: all 300ms ease-in-out;
+}
+
+.clear-completed-btn:hover {
+  background: var(--primary);
+  color: var(--white);
+  font-size: 1.25rem;
+}
+
+.clear-completed-btn:active {
+  transform: translateY(3px);
+}
+`, "",{"version":3,"sources":["webpack://./src/styles/main.css"],"names":[],"mappings":"AAAA,sBAAsB;AACtB;EACE,WAAW;EACX,4BAA4B;EAC5B,kBAAkB;EAClB,aAAa;EACb,aAAa;EACb,mBAAmB;EACnB,qBAAqB;AACvB;;AAEA,mBAAmB;AACnB;EACE,6EAA6E;EAC7E,0BAA0B;AAC5B;;AAEA;EACE,qBAAqB;EACrB,gBAAgB;EAChB,iBAAiB;EACjB,wBAAwB;EACxB,sCAAsC;AACxC;;AAEA,sBAAsB;AACtB;EACE,gBAAgB;AAClB;;AAEA;EACE,gBAAgB;EAChB,aAAa;EACb,sBAAsB;EACtB,SAAS;EACT,UAAU;EACV,iCAAiC;AACnC;;AAEA;EACE,aAAa;EACb,SAAS;EACT,sBAAsB;EACtB,8BAA8B;EAC9B,gBAAgB;EAChB,qCAAqC;EACrC,wCAAwC;AAC1C;;AAEA;EACE,kBAAkB;AACpB;;AAEA;EACE,YAAY;EACZ,aAAa;AACf;;AAEA;EACE,YAAY;EACZ,WAAW;EACX,kBAAkB;EAClB,iBAAiB;EACjB,gBAAgB;EAChB,iCAAiC;EACjC,iCAAiC;AACnC;;AAEA;EACE,0BAA0B;EAC1B,mBAAmB;EACnB,kBAAkB;AACpB;;AAEA;EACE,0BAA0B;AAC5B","sourcesContent":["/* Custom Properties */\n:root {\n  /* Colors */\n  --primary: rgb(14, 102, 234);\n  --page-bg: #f6f6f6;\n  --black: #000;\n  --white: #fff;\n  --gray-200: #eaeaea;\n  --gray-400: #00000073;\n}\n\n/* General Styles */\nbody {\n  font-family: 'Open Sans', 'Lucida Grande', tahoma, verdana, arial, sans-serif;\n  background: var(--page-bg);\n}\n\n.container {\n  min-width: 23.4375rem;\n  max-width: 60rem;\n  margin: 3rem auto;\n  background: var(--white);\n  box-shadow: 0 2px 8px rgb(0 0 0 / 15%);\n}\n\n/* To Do List Styles */\n.to-do-list-title {\n  padding: 0.75rem;\n}\n\n.to-do-list {\n  list-style: none;\n  display: flex;\n  flex-direction: column;\n  margin: 0;\n  padding: 0;\n  border: 1px solid var(--gray-200);\n}\n\n.to-do-item {\n  display: flex;\n  gap: 1rem;\n  min-width: min-content;\n  justify-content: space-between;\n  padding: 0.75rem;\n  border-top: 1px solid var(--gray-200);\n  border-bottom: 1px solid var(--gray-200);\n}\n\n.to-do-item__description {\n  margin-right: auto;\n}\n\n.to-do-item__delete-btn {\n  border: none;\n  outline: none;\n}\n\n.clear-completed-btn {\n  height: 4rem;\n  width: 100%;\n  text-align: center;\n  font-size: 1.2rem;\n  font-weight: 600;\n  border: 1px solid var(--gray-200);\n  transition: all 300ms ease-in-out;\n}\n\n.clear-completed-btn:hover {\n  background: var(--primary);\n  color: var(--white);\n  font-size: 1.25rem;\n}\n\n.clear-completed-btn:active {\n  transform: translateY(3px);\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -712,6 +785,66 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_reset_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/reset.css */ "./src/styles/reset.css");
 /* harmony import */ var _styles_main_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/main.css */ "./src/styles/main.css");
 
+
+
+const sampleToDos = [
+  {
+    description: 'Work on a personal coding project',
+    completed: false,
+    index: 0,
+  },
+  {
+    description: 'Take part in an online coding challenge or competition',
+    completed: false,
+    index: 1,
+  },
+  {
+    description: 'Attend a virtual tech meetup or webinar',
+    completed: false,
+    index: 2,
+  },
+  {
+    description: 'Read a technical book or blog',
+    completed: false,
+    index: 3,
+  },
+  {
+    description: 'Review and refactor existing code for optimization',
+    completed: false,
+    index: 4,
+  },
+];
+
+const toDoListTarget = document.getElementById('to-do-list-target');
+
+const generateToDoItemHTML = (toDoItem) => {
+  const li = document.createElement('li');
+  const checkBox = document.createElement('input');
+  checkBox.setAttribute('type', 'checkbox');
+  const description = document.createElement('span');
+  const deleteBtn = document.createElement('button');
+  const dragBtn = document.createElement('button');
+
+  li.classList.add('to-do-item');
+  description.classList.add('to-do-item__description');
+  deleteBtn.classList.add('to-do-item__delete-btn');
+
+  description.innerText = `${toDoItem.description}`;
+  deleteBtn.innerText = 'Delete';
+  deleteBtn.setAttribute('data-to-do-index', toDoItem.index);
+  dragBtn.setAttribute('data-to-do-index', toDoItem.index);
+
+  li.appendChild(checkBox);
+  li.appendChild(description);
+  li.appendChild(deleteBtn);
+  li.appendChild(dragBtn);
+  return li;
+};
+
+sampleToDos.forEach((toDoItem) => {
+  const html = generateToDoItemHTML(toDoItem);
+  toDoListTarget.appendChild(html);
+});
 
 })();
 
