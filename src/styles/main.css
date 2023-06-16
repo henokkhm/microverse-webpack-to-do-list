@@ -1,7 +1,9 @@
 /* Custom Properties */
 :root {
   /* Colors */
-  --primary: rgb(14, 102, 234);
+  --primary-100: rgb(220, 232, 249);
+  --primary-200: rgb(169, 203, 253);
+  --primary-400: rgb(14, 102, 234);
   --page-bg: #f6f6f6;
   --black: #000;
   --white: #fff;
@@ -26,6 +28,25 @@ body {
 /* To Do List Styles */
 .to-do-list-title {
   padding: 0.75rem;
+  border: 1px solid var(--gray-200);
+}
+
+.add-to-do-form {
+  width: 100%;
+}
+
+.new-to-do-item-input {
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+  border-left: 2px solid var(--gray-200);
+  border-right: 2px solid var(--gray-200);
+  outline: none;
+  padding: 1rem 0.75rem;
+  width: 100%;
+}
+
+.new-to-do-item-input:focus {
+  border: 2px solid var(--primary-200);
 }
 
 .to-do-list {
@@ -43,12 +64,28 @@ body {
   min-width: min-content;
   justify-content: space-between;
   padding: 0.75rem;
-  border-top: 1px solid var(--gray-200);
-  border-bottom: 1px solid var(--gray-200);
+  border: 1px solid var(--gray-200);
 }
 
 .to-do-item__description {
   margin-right: auto;
+  width: 100%;
+  border: none;
+  outline: none;
+}
+
+.to-do-item__description:focus {
+  border: none;
+  outline: none;
+}
+
+.to-do-item.focused .to-do-item__description {
+  background-color: var(--primary-100);
+}
+
+.to-do-item.focused {
+  border: 1px solid var(--primary-200);
+  background-color: var(--primary-100);
 }
 
 .to-do-item__delete-btn {
@@ -67,7 +104,7 @@ body {
 }
 
 .clear-completed-btn:hover {
-  background-color: var(--primary);
+  background-color: var(--primary-400);
   color: var(--white);
   font-size: 1.25rem;
 }
