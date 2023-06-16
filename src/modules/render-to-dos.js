@@ -3,8 +3,8 @@ import dotsSrc from '../assets/icons/dots.svg';
 
 const generateToDoItemHTML = (toDoItem) => {
   const li = document.createElement('li');
-  const checkBox = document.createElement('input');
-  checkBox.setAttribute('type', 'checkbox');
+  const checkbox = document.createElement('input');
+  checkbox.setAttribute('type', 'checkbox');
   const description = document.createElement('input');
   const deleteBtn = document.createElement('button');
   const trashIcon = document.createElement('img');
@@ -12,6 +12,7 @@ const generateToDoItemHTML = (toDoItem) => {
   const dragIcon = document.createElement('img');
 
   li.classList.add('to-do-item');
+  checkbox.classList.add('to-do-item__checkbox');
   description.classList.add('to-do-item__description');
   deleteBtn.classList.add('to-do-item__delete-btn');
   trashIcon.classList.add('to-do-item__trash-icon');
@@ -24,11 +25,20 @@ const generateToDoItemHTML = (toDoItem) => {
   dragIcon.src = dotsSrc;
   dragBtn.appendChild(dragIcon);
 
+  if (toDoItem.completed) {
+    description.classList.add('completed');
+    checkbox.checked = true;
+  } else {
+    description.classList.remove('completed');
+    checkbox.checked = false;
+  }
+
+  checkbox.setAttribute('data-to-do-index', toDoItem.index);
   description.setAttribute('data-to-do-index', toDoItem.index);
   trashIcon.setAttribute('data-to-do-index', toDoItem.index);
   dragBtn.setAttribute('data-to-do-index', toDoItem.index);
 
-  li.appendChild(checkBox);
+  li.appendChild(checkbox);
   li.appendChild(description);
   li.appendChild(deleteBtn);
   li.appendChild(dragBtn);
