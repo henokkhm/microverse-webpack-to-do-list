@@ -10,6 +10,10 @@ class ToDoList {
     return this.#toDoList;
   }
 
+  saveToLocalstorage() {
+    localStorage.setItem('to-do-list', JSON.stringify(this.#toDoList));
+  }
+
   createToDoItem(description) {
     const newToDo = {
       index: this.#toDoList.length + 1,
@@ -18,7 +22,7 @@ class ToDoList {
     };
 
     this.#toDoList.push(newToDo);
-    localStorage.setItem('to-do-list', JSON.stringify(this.#toDoList));
+    this.saveToLocalstorage();
     return newToDo;
   }
 
@@ -40,7 +44,7 @@ class ToDoList {
       toDoItem.index = index + 1;
     });
 
-    localStorage.setItem('to-do-list', JSON.stringify(this.#toDoList));
+    this.saveToLocalstorage();
   }
 
   updateToDoDescription(index, newDescription) {
@@ -51,7 +55,7 @@ class ToDoList {
       return toDoItem;
     });
 
-    localStorage.setItem('to-do-list', JSON.stringify(this.#toDoList));
+    this.saveToLocalstorage();
   }
 
   toggleToDoCompleted(index) {
@@ -62,7 +66,8 @@ class ToDoList {
       return toDoItem;
     });
 
-    localStorage.setItem('to-do-list', JSON.stringify(this.#toDoList));
+    this.saveToLocalstorage();
+  }
   }
 }
 export default ToDoList;
