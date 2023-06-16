@@ -24,6 +24,7 @@ const generateToDoItemHTML = (toDoItem) => {
 
 const renederToDos = (toDoArr) => {
   const toDoListTarget = document.getElementById('to-do-list-target');
+  toDoListTarget.innerHTML = '';
 
   toDoArr.forEach((toDoItem) => {
     const html = generateToDoItemHTML(toDoItem);
