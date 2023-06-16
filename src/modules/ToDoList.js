@@ -68,6 +68,10 @@ class ToDoList {
 
     this.saveToLocalstorage();
   }
+
+  removeCompleted() {
+    this.#toDoList = this.#toDoList.filter((toDoItem) => !toDoItem.completed);
+    this.saveToLocalstorage();
   }
 }
 export default ToDoList;
