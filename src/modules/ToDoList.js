@@ -12,7 +12,7 @@ class ToDoList {
 
   createToDoItem(description) {
     const newToDo = {
-      index: this.#toDoList.length,
+      index: this.#toDoList.length + 1,
       description,
       completed: false,
     };
@@ -37,7 +37,7 @@ class ToDoList {
     });
 
     this.#toDoList.forEach((toDoItem, index) => {
-      toDoItem.index = index;
+      toDoItem.index = index + 1;
     });
 
     localStorage.setItem('to-do-list', JSON.stringify(this.#toDoList));
