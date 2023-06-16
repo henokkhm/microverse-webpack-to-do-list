@@ -23,8 +23,9 @@ class ToDoList {
   }
 
   deleteToDoItem(index) {
+    const idx = parseInt(index, 10);
     this.#toDoList = this.#toDoList.filter(
-      (toDoItem) => toDoItem.index !== index,
+      (toDoItem) => toDoItem.index !== idx,
     );
 
     // Update indexes
