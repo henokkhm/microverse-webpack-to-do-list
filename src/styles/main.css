@@ -1,7 +1,8 @@
 /* Custom Properties */
 :root {
   /* Colors */
-  --primary: rgb(14, 102, 234);
+  --primary-400: rgb(14, 102, 234);
+  --primary-200: rgb(169, 203, 253);
   --page-bg: #f6f6f6;
   --black: #000;
   --white: #fff;
@@ -26,6 +27,21 @@ body {
 /* To Do List Styles */
 .to-do-list-title {
   padding: 0.75rem;
+}
+
+.add-to-do-form {
+  width: 100%;
+}
+
+.new-to-do-item-input {
+  border: 3px solid transparent;
+  outline: none;
+  padding: 1rem 0.75rem;
+  width: 100%;
+}
+
+.new-to-do-item-input:focus {
+  border: 3px solid var(--primary-200);
 }
 
 .to-do-list {
@@ -67,7 +83,7 @@ body {
 }
 
 .clear-completed-btn:hover {
-  background-color: var(--primary);
+  background-color: var(--primary-400);
   color: var(--white);
   font-size: 1.25rem;
 }
