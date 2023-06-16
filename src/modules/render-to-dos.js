@@ -22,7 +22,7 @@ const generateToDoItemHTML = (toDoItem) => {
   return li;
 };
 
-const renederToDos = (toDoArr) => {
+const renderToDos = (toDoArr) => {
   const toDoListTarget = document.getElementById('to-do-list-target');
   toDoListTarget.innerHTML = '';
 
@@ -32,4 +32,4 @@ const renederToDos = (toDoArr) => {
   });
 };
 
-export default renederToDos;
+export default renderToDos;
