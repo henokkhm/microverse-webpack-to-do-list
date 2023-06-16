@@ -2,7 +2,7 @@ const generateToDoItemHTML = (toDoItem) => {
   const li = document.createElement('li');
   const checkBox = document.createElement('input');
   checkBox.setAttribute('type', 'checkbox');
-  const description = document.createElement('span');
+  const description = document.createElement('input');
   const deleteBtn = document.createElement('button');
   const dragBtn = document.createElement('button');
 
@@ -10,8 +10,10 @@ const generateToDoItemHTML = (toDoItem) => {
   description.classList.add('to-do-item__description');
   deleteBtn.classList.add('to-do-item__delete-btn');
 
-  description.innerText = `${toDoItem.description}`;
+  description.value = `${toDoItem.description}`;
   deleteBtn.innerText = 'Delete';
+
+  description.setAttribute('data-to-do-index', toDoItem.index);
   deleteBtn.setAttribute('data-to-do-index', toDoItem.index);
   dragBtn.setAttribute('data-to-do-index', toDoItem.index);
 
