@@ -4,6 +4,7 @@ import initializeAddToDoFormEventHandlers from './modules/initialize-add-to-do-f
 import initializeDeleteBtnEventHandlers from './modules/initialize-delete-btn-event-handlers.js';
 import initializeEditToDoInputs from './modules/initialize-edit-todo-inputs.js';
 import initializeCheckboxEventHandlers from './modules/initialize-checkbox-event-handlers.js';
+import initializeClearCompletedEventHandlers from './modules/initialize-clear-completed-event-handlers.js';
 import './styles/reset.css';
 import './styles/main.css';
 
@@ -14,3 +15,4 @@ initializeDeleteBtnEventHandlers(myToDoList);
 initializeAddToDoFormEventHandlers(myToDoList);
 initializeEditToDoInputs(myToDoList);
 initializeCheckboxEventHandlers(myToDoList);
+initializeClearCompletedEventHandlers(myToDoList);
