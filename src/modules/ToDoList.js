@@ -21,5 +21,27 @@ class ToDoList {
     localStorage.setItem('to-do-list', JSON.stringify(this.#toDoList));
     return newToDo;
   }
+
+  deleteToDoItem(index) {
+    this.#toDoList = this.#toDoList.filter(
+      (toDoItem) => toDoItem.index !== index,
+    );
+
+    // Update indexes
+    this.#toDoList.sort((toDo1, toDo2) => {
+      if (toDo1.index > toDo2.index) {
+        return 1;
+      }
+      return -1;
+    });
+
+    this.#toDoList.forEach((toDoItem, index) => {
+      toDoItem.index = index;
+    });
+
+    localStorage.setItem('to-do-list', JSON.stringify(this.#toDoList));
+  }
+
+  updateToDoDescription(index, newDescription) {
 }
 export default ToDoList;
