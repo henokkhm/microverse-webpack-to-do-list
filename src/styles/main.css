@@ -79,7 +79,6 @@ body {
   color: var(--gray-400);
 }
 
-
 .to-do-item__description:focus {
   border: none;
   outline: none;
@@ -94,7 +93,8 @@ body {
   background-color: var(--primary-100);
 }
 
-.to-do-item__delete-btn, .to-do-item__drag-btn {
+.to-do-item__delete-btn,
+.to-do-item__drag-btn {
   border: none;
   outline: none;
   background: none;
@@ -106,16 +106,18 @@ body {
   visibility: hidden;
 }
 
-.to-do-item.focused .to-do-item__delete-btn {
-  visibility: visible;
-}
-
-.to-do-item__delete-btn:hover, .to-do-item__drag-btn:hover {
+.to-do-item__delete-btn:hover,
+.to-do-item__drag-btn:hover {
   transform: scale(1.1);
 }
 
-.to-do-item__delete-btn:active, .to-do-item__drag-btn:active {
+.to-do-item__delete-btn:active,
+.to-do-item__drag-btn:active {
   transform: translateY(4px) scale(1.1);
+}
+
+.to-do-item.focused .to-do-item__delete-btn {
+  visibility: visible;
 }
 
 .clear-completed-btn {
