@@ -43,5 +43,16 @@ class ToDoList {
   }
 
   updateToDoDescription(index, newDescription) {
+    this.#toDoList = this.#toDoList.map((toDoItem) => {
+      if (toDoItem.index === index) {
+        return { ...toDoItem, description: newDescription };
+      }
+      return toDoItem;
+    });
+
+    localStorage.setItem('to-do-list', JSON.stringify(this.#toDoList));
+  }
+    localStorage.setItem('to-do-list', JSON.stringify(this.#toDoList));
+  }
 }
 export default ToDoList;
