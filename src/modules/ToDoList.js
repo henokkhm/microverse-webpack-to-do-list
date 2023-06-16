@@ -52,6 +52,15 @@ class ToDoList {
 
     localStorage.setItem('to-do-list', JSON.stringify(this.#toDoList));
   }
+
+  toggleToDoCompleted(index) {
+    this.#toDoList = this.#toDoList.map((toDoItem) => {
+      if (toDoItem.index === index) {
+        return { ...toDoItem, completed: !toDoItem.completed };
+      }
+      return toDoItem;
+    });
+
     localStorage.setItem('to-do-list', JSON.stringify(this.#toDoList));
   }
 }
