@@ -74,6 +74,12 @@ body {
   outline: none;
 }
 
+.to-do-item__description.completed {
+  text-decoration: line-through;
+  color: var(--gray-400);
+}
+
+
 .to-do-item__description:focus {
   border: none;
   outline: none;
