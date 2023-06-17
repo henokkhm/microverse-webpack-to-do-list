@@ -26,13 +26,7 @@ class ToDoList {
     return newToDo;
   }
 
-  deleteToDoItem(index) {
-    const idx = parseInt(index, 10);
-    this.#toDoList = this.#toDoList.filter(
-      (toDoItem) => toDoItem.index !== idx,
-    );
-
-    // Update indexes
+  updateIndices() {
     this.#toDoList.sort((toDo1, toDo2) => {
       if (toDo1.index > toDo2.index) {
         return 1;
@@ -43,7 +37,15 @@ class ToDoList {
     this.#toDoList.forEach((toDoItem, index) => {
       toDoItem.index = index + 1;
     });
+  }
 
+  deleteToDoItem(index) {
+    const idx = parseInt(index, 10);
+    this.#toDoList = this.#toDoList.filter(
+      (toDoItem) => toDoItem.index !== idx,
+    );
+
+    this.updateIndices();
     this.saveToLocalstorage();
   }
 
@@ -71,6 +73,7 @@ class ToDoList {
 
   removeCompleted() {
     this.#toDoList = this.#toDoList.filter((toDoItem) => !toDoItem.completed);
+    this.updateIndices();
     this.saveToLocalstorage();
   }
 }
