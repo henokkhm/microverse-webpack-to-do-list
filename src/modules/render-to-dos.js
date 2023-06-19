@@ -27,6 +27,7 @@ const generateToDoItemHTML = (toDoItem) => {
 
   if (toDoItem.completed) {
     description.classList.add('completed');
+    description.readOnly = true;
     checkbox.checked = true;
   } else {
     description.classList.remove('completed');
